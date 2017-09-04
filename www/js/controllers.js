@@ -1,6 +1,32 @@
 angular.module('starter.controllers', [])
 
-.controller('DashCtrl', function($scope) {})
+.controller('DashCtrl', function($scope, $http) {
+  $scope.items = [1,2,3];
+  $scope.doRefresh = function() {
+    $http.get('/new-items')
+     .success(function(newItems) {
+       $scope.items = newItems;
+     })
+     .finally(function() {
+       // Stop the ion-refresher from spinning
+       $scope.$broadcast('scroll.refreshComplete');
+     })
+  };
+
+  $scope.devList = [
+    { text: "HTML5", checked: true },
+    { text: "CSS3", checked: false },
+    { text: "JavaScript", checked: false }
+  ];
+
+  // $scope.pushNotificationChange = function() {
+  //   console.log('Push Notification Change', $scope.pushNotification.checked);
+  // };
+  
+  // $scope.pushNotification = { checked: true };
+  // $scope.emailNotification = 'Subscribed';
+
+})
 
 .controller('ChatsCtrl', function($scope, Chats) {
   // With the new view caching in Ionic, Controllers are only called
