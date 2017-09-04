@@ -1,11 +1,5 @@
 {
-  "name": "ionic_testApp",
+  "name": "testApp",
   "app_id": "",
-  "type": "ionic1",
-  "integrations": {
-    "gulp": {}
-  },
-  "watchPatterns": [
-    "scss/**/*"
-  ]
+  "type": "ionic1"
 }

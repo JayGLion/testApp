@@ -1,1 +1,0 @@
-ionic start ionic_testApp tabs --type=ionic1
