@@ -20,15 +20,15 @@ angular.module('starter.controllers', [])
     { text: "JavaScript", checked: false }
   ];
 
-  // $scope.pushNotificationChange = function() {
-  //   console.log('Push Notification Change', $scope.pushNotification.checked);
-  // };
+  $scope.pushNotificationChange = function() {
+    console.log('Push Notification Change', $scope.pushNotification.checked);
+  };
   
-  // $scope.pushNotification = { checked: true };
-  // $scope.emailNotification = 'Subscribed';
+  $scope.pushNotification = { checked: true };
+  $scope.emailNotification = 'Subscribed';
   $http({
-	  method: 'GET', //방식
-	  url: 'http://localhost:3000/api/boards',
+	  method: 'GET',
+	  url: 'http://localhost:3000/api/boards/1?access_token=qWQWAq3ybScI30q3ZtB01QsGSsVWcwCBB1wl0aDvhsFrR0u3KzsH44xrRqnvBXmX',
   	headers: {'Content-Type': 'application/json; charset=utf-8'}
     })
      .success(function(data) {
