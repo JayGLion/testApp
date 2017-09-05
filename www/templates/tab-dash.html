@@ -1,6 +1,7 @@
 <ion-view view-title="Dashboard">
   <ion-content>
-      <div class="list">
+    
+    <div class="list">
           
           <ion-checkbox ng-repeat="item in devList"
                         ng-model="item.checked" 
@@ -43,5 +44,8 @@
     <ion-list>
       <ion-item ng-repeat="item in items">{{item}}</ion-item>
     </ion-list>
+    <ion-list>
+      <ion-item ng-repeat="board in boards">{{board.id}}{{board.title}}</ion-item>
+    </ion-list>  
   </ion-content>
 </ion-view>
