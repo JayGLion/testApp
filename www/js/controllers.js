@@ -3,6 +3,27 @@ angular.module('starter.controllers', [])
 .controller('DashCtrl', function($scope, $http) {
   $scope.items = [1,2,3];
   $scope.boards = [{}];
+  var userInfo = {
+    "email": "admin@test.com",
+    "password":"1234"
+  };
+
+  $http({
+	  method: 'POST',
+	  url: 'http://localhost:3000/api/Users/login',
+    headers: {'Content-Type': 'application/json; charset=utf-8'},
+    data: userInfo
+    })
+     .success(function(data) {
+       console.log(data);
+     })
+     .finally(function() {
+       // Stop the ion-refresher from spinning
+       //$scope.$broadcast('scroll.refreshComplete');
+     })
+
+
+
   $scope.doRefresh = function() {
     $http.get('/new-items')
      .success(function(newItems) {
